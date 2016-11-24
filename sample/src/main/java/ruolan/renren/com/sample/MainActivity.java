@@ -45,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
     private static int mCurrentCounter = 0;
     private static ArrayList<ItemModel> mItems;
 
+    //自定义的RecyclerView
     private LRecyclerView mRecyclerView = null;
 
+    //需要自己去实现的adapter
     private DataAdapter mDataAdapter = null;
-
+    //传递消息的handler
     private PreviewHandler mHandler = new PreviewHandler(this);
+    //这个必须有，真正的adapter，我们创建的adapter需要交个这个的构造函数
     private LRecyclerViewAdapter mLRecyclerViewAdapter = null;
 
     private boolean isRefresh = false;
@@ -286,7 +289,9 @@ public class MainActivity extends AppCompatActivity {
                     });
         }
 
-        /**item的子控件的点击事件，一般用在评论、点赞、转发等等。。。。。。*/
+        /**
+         * item的子控件的点击事件，一般用在评论、点赞、转发等等。。。。。。
+         */
         //--------------------------如果想要对item里面的某个控件进行
         //--------------------------设置点击事件，那么就参考下面的写
         //--------------------------法，然后在上面通过getView(id)获取

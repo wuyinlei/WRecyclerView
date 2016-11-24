@@ -22,6 +22,12 @@ public abstract class BaseAdapter<T, H extends BaseViewHolder> extends RecyclerV
     }
 
 
+    /**
+     * construct
+     * @param context  上下文
+     * @param layoutResId  布局ID
+     * @param datas  数据源
+     */
     public BaseAdapter(Context context, int layoutResId, List<T> datas) {
         this.datas = datas == null ? new ArrayList<T>() : datas;
         this.mContext = context;
